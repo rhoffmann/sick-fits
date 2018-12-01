@@ -1,4 +1,4 @@
-const result = require('dotenv').config();
+require('dotenv').config();
 
 const createServer = require('./createServer');
 const db = require('./db');
@@ -13,6 +13,6 @@ server.start({
     credentials: true,
     origin: process.env.FRONTEND_URL
   },
-}, deets => {
-  console.log(`server is now running on port http://localhost:${deets.port}`);
+}, (srv) => {
+  console.log(`server is now running on port http://localhost:${srv.port}`);
 });
