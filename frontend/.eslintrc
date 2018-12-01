@@ -120,7 +120,6 @@
     ]
   },
   "plugins": [
-    // "html",
     "prettier"
   ]
 }
