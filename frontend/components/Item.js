@@ -9,7 +9,6 @@ import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 
 function Item({ item }) {
-
   return (
     <ItemStyles>
       { item.image && <img src={item.image} alt={item.title} />}

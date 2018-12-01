@@ -32,22 +32,24 @@ const ItemsList = styled.div `
 
 export default class Items extends Component {
   render() {
-    return (<Center>
-      <Query query={ALL_ITEMS_QUERY}>
-        {
-          ({error, data, loading}) => {
-            {
-              if(loading)
-                return <p>loading...</p>;
-              if (error)
-                return <p>Error: {error.message}</p>;
-              return (<ItemsList>
-                {data.items.map(item => <Item key={item.id} item={item}/>)}
-              </ItemsList>);
+    return (
+      <Center>
+        <Query query={ALL_ITEMS_QUERY}>
+          {
+            ({error, data, loading}) => {
+              {
+                if(loading) return <p>loading...</p>;
+                if (error) return <p>Error: {error.message}</p>;
+                return (
+                  <ItemsList>
+                    {data.items.map(item => <Item key={item.id} item={item}/>)}
+                  </ItemsList>
+                );
+              }
             }
           }
-        }
-      </Query>
-    </Center>);
+        </Query>
+      </Center>
+    );
   }
 }
